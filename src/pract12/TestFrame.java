@@ -43,8 +43,8 @@ public class TestFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Client client= new Client();
-                ImageDocument imageDocument =  client.createNewImage(); /* создадим фотографию */
-                System.out.println(client.createOpenImage(imageDocument)); /* выведем фотографию */
+                ImageDocument imageDocument =  client.createNewImage();
+                System.out.println(client.createOpenImage(imageDocument));
             }
         });
 
@@ -88,7 +88,7 @@ public class TestFrame extends JFrame {
         closeItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.print("Files closed"); //[H[2J
+                System.out.print("Files closed");
                 System.out.flush();
             }
         });
@@ -106,7 +106,6 @@ public class TestFrame extends JFrame {
         });
 
         menuBar.add(fileMenu);
-
         frame.setJMenuBar(menuBar);
 
         frame.setPreferredSize(new Dimension(270, 225));

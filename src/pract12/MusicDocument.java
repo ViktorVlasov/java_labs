@@ -4,7 +4,7 @@ public class MusicDocument implements IDocument {
     private String document;
 
     public MusicDocument() {
-        this.document = "Music document : lala-la-la-lala-la !";
+        this.document = "Music document!";
     }
 
     public String infoDocument() {
