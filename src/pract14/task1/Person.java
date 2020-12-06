@@ -23,8 +23,7 @@ public class Person {
     }
 
     public String getName() {
-        assert firstName != null;
-        assert lastName != null;
+
 
         return firstName + " " + lastName;
     }

@@ -15,7 +15,7 @@ public class CheckPass {
         return true;
     }
     public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.print("Enter password: ");

@@ -9,7 +9,7 @@ public class Numbers {
     private final int secondThree;
     private final int four;
 
-    private static final String INTERNATIONAL_REGEX = "^[+][0-9][/0-9]{10}$";
+    private static final String INTERNATIONAL_REGEX = "^[+][0-9][/0-9]{0,15}$";
     private static final String RUSSIAN_REGEX = "^[8][/0-9]{10}$";
 
 

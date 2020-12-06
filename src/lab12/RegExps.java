@@ -1,7 +1,5 @@
 package lab12;
 
-import java.util.ArrayList;
-import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,6 +28,7 @@ public class RegExps {
     }
 
     public static void main(String[] args) {
+
         RegExps regExps = new RegExps();
         regExps.getPrice("TEST 25.98 USD, 155.10 RUB, 99.50 EU");
         regExps.getPrice("TEST 25.98 $, 155.10 RU, 99.50 ERR");

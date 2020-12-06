@@ -7,9 +7,7 @@ public class ImageDocument implements IDocument {
     }
 
 
-
     public String infoDocument() {
-
         return document;
     }
 }
