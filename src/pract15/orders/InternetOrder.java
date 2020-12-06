@@ -1,9 +1,11 @@
-package pract15;
+package pract15.orders;
 
-/*
+
+import pract15.Customer;
 import pract15.interfaces.IItemSelector;
 import pract15.interfaces.Item;
 import pract15.interfaces.Order;
+import pract15.menu.MenuItem;
 import pract15.utils.ItemsSorter;
 import pract15.utils.MyArrayList;
 import pract15.utils.CycledLinkedList;
@@ -71,5 +73,60 @@ public class InternetOrder extends CycledLinkedList<Item> implements Order {
     public int countOf(String name) {
         return countOf(getSelectorByName(name));
     }
+
+    public boolean add(MenuItem item) {
+        return false;
+    }
+
+    public String[] itemsNames() {
+        return new String[0];
+    }
+
+    public int itemsQuantity() {
+        return 0;
+    }
+
+    public int itemQuantity(String itemName) {
+        return 0;
+    }
+
+    public int itemQuantity(MenuItem item) {
+        return 0;
+    }
+
+    public MenuItem[] getItems() {
+        return new MenuItem[0];
+    }
+
+    public boolean remove(String itemName) {
+        return false;
+    }
+
+    public boolean remove(MenuItem item) {
+        return false;
+    }
+
+    public int removeAll(String itemName) {
+        return 0;
+    }
+
+    public int removeAll(MenuItem item) {
+        return 0;
+    }
+
+    public MenuItem[] sortedItemsByCostDesc() {
+        return new MenuItem[0];
+    }
+
+    public int costTotal() {
+        return 0;
+    }
+
+    public Customer getCustomer() {
+        return null;
+    }
+
+    public void setCustomer(Customer customer) {
+
+    }
 }
-*/

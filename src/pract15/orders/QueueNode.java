@@ -1,10 +1,9 @@
-package lab16.cafe.order;
+package pract15.orders;
 
-import lab16.cafe.interfaces.Order;
 
+import pract15.interfaces.Order;
 
 public class QueueNode {
-
     private QueueNode next;
     private QueueNode prev;
     private Order value;

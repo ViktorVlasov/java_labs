@@ -1,7 +1,6 @@
-package lab16.cafe.interfaces;
+package pract15.interfaces;
 
-import lab16.cafe.menu.MenuItem;
-
+import pract15.menu.MenuItem;
 
 public interface OrdersManager {
 

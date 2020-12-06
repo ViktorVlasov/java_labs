@@ -1,9 +1,10 @@
 package pract15.orders;
 
 import pract15.Customer;
-import pract15.interfaces.Item;
 import pract15.interfaces.Order;
 import pract15.menu.MenuItem;
+
+import java.awt.*;
 
 public class TableOrder implements Order {
     private final int DEFAULT_SIZE_OF_ARRAY = 10;
@@ -117,7 +118,16 @@ public class TableOrder implements Order {
     public int removeAll(String itemName) { return 0; }
     public int removeAll(MenuItem item) { return 0; }
     public MenuItem[] sortedItemsByCostDesc() { return new MenuItem[0]; }
-    public int costTotal() { return 0; }
+    public int costTotal() {
+        int total = 0;
+        int i = 0;
+
+        while (i < size){
+            total += items[i].getCost();
+            i++;
+        }
+        return total;
+    }
     public Customer getCustomer() { return null; }
     public void setCustomer(Customer customer) { }
 }
