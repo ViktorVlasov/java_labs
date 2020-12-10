@@ -1,8 +1,8 @@
 package pract14.task1;
 
 public class Person {
-    private String firstName;
-    private String lastName;
+    private String firstName = "";
+    private String lastName = "";
 
     public Person() {}
 
@@ -23,7 +23,8 @@ public class Person {
     }
 
     public String getName() {
-
+        if (firstName.isEmpty() || lastName.isEmpty())
+            return "First name or last name is empty";
 
         return firstName + " " + lastName;
     }

@@ -3,8 +3,13 @@ package pract15.orders;
 import pract15.Customer;
 import pract15.interfaces.Order;
 import pract15.menu.MenuItem;
+import pract15.utils.ItemsSorter;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class TableOrder implements Order {
     private final int DEFAULT_SIZE_OF_ARRAY = 10;
@@ -78,17 +83,24 @@ public class TableOrder implements Order {
         MenuItem[] new_items = new MenuItem[this.items.length];
         int i = 0;
         int k = 0;
+        boolean isDelete = false;
 
         if (itemQuantity(itemName) != 0)
         {
-            while (i < size) {
-                if (!this.items[k].getName().equals(itemName)) {
+            while (k < size) {
+                if (!this.items[k].getName().equals(itemName) || isDelete) {
                     new_items[i] = this.items[k];
                     i++;
+                    k++;
                 }
-                k++;
+                else if (!isDelete)
+                {
+                    isDelete = true;
+                    k++;
+                }
             }
             this.items = new_items;
+            this.size = i;
             return true;
         }
         else
@@ -98,32 +110,85 @@ public class TableOrder implements Order {
         MenuItem[] new_items = new MenuItem[this.items.length];
         int i = 0;
         int k = 0;
+        boolean isDelete = false;
 
         if (itemQuantity(item) != 0)
         {
-            while (i < size) {
-                if (this.items[k] == item) {
+            while (k < size) {
+                if (this.items[k] != item || isDelete) {
                     new_items[i] = this.items[k];
                     i++;
+                    k++;
                 }
-                k++;
+                else if (!isDelete)
+                {
+                    isDelete = true;
+                    k++;
+                }
             }
             this.items = new_items;
+            this.size = i;
             return true;
         }
         else
             return false;
     }
 
-    public int removeAll(String itemName) { return 0; }
-    public int removeAll(MenuItem item) { return 0; }
-    public MenuItem[] sortedItemsByCostDesc() { return new MenuItem[0]; }
+    public boolean removeAll(String itemName) {
+        MenuItem[] new_items = new MenuItem[this.items.length];
+        int i = 0;
+        int k = 0;
+
+        if (itemQuantity(itemName) != 0)
+        {
+            while (k < size) {
+                if (!this.items[k].getName().equals(itemName)) {
+                    new_items[i] = this.items[k];
+                    i++;
+                }
+                k++;
+            }
+            this.items = new_items;
+            this.size = i;
+            return true;
+        }
+        else
+            return false;
+    }
+
+
+    public boolean removeAll(MenuItem item) {
+        MenuItem[] new_items = new MenuItem[this.items.length];
+        int i = 0;
+        int k = 0;
+
+        if (itemQuantity(item) != 0)
+        {
+            while (k < size) {
+                if (this.items[k] != item) {
+                    new_items[i] = this.items[k];
+                    i++;
+                }
+                k++;
+            }
+            this.items = new_items;
+            this.size = i;
+            return true;
+        }
+        else
+            return false;
+    }
+    public MenuItem[] sortedItemsByCostDesc() {
+        ItemsSorter.sort(this.items);
+        return items;
+    }
     public int costTotal() {
         int total = 0;
         int i = 0;
 
         while (i < size){
-            total += items[i].getCost();
+            if (items[i] != null)
+                total += items[i].getCost();
             i++;
         }
         return total;

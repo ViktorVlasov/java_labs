@@ -25,7 +25,6 @@ public class TableOrdersManager implements OrdersManager {
     public int removeAll(Order order) {
         return 0;
     }
-
     public int itemsQuantity(String itemName) {
         return 0;
     }

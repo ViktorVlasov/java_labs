@@ -12,8 +12,8 @@ public interface Order {
     MenuItem[] getItems();
     boolean remove(String itemName);
     boolean remove(MenuItem item);
-    int removeAll(String itemName);
-    int removeAll(MenuItem item);
+    boolean removeAll(String itemName);
+    boolean removeAll(MenuItem item);
     MenuItem[] sortedItemsByCostDesc();
     int costTotal();
     Customer getCustomer();

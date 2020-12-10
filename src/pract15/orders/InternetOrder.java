@@ -106,12 +106,12 @@ public class InternetOrder extends CycledLinkedList<Item> implements Order {
         return false;
     }
 
-    public int removeAll(String itemName) {
-        return 0;
+    public boolean removeAll(String itemName) {
+        return false;
     }
 
-    public int removeAll(MenuItem item) {
-        return 0;
+    public boolean removeAll(MenuItem item) {
+        return false;
     }
 
     public MenuItem[] sortedItemsByCostDesc() {
